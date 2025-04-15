@@ -61,21 +61,25 @@ By chaining these operations together, you can automate the handling of response
 
 ## 📄 Use Case Examples
 
-### 1. **JSON Output Parsing**
+### 1. **JSON Output Parsing (`jsonoutputparser.py`)**
 
 This parser is used when you expect the model to return structured data, such as JSON, which is directly usable in your code or application. For instance, you might use this to parse details about a country (e.g., population, area, president name) returned by a language model.
 
-### 2. **Pydantic Output Parsing**
+### 2. **Pydantic Output Parsing (`pydanticoutputparser.py`)**
 
 In scenarios where you need strict data validation, Pydantic’s output parser ensures that the model's response matches a predefined schema. This is useful for when you want to make sure the output data adheres to specific rules (e.g., city population should be an integer, area should be in square meters, etc.).
 
-### 3. **Text Output Parsing**
+### 3. **Text Output Parsing (`stroutputparser.py`)**
 
 For cases where the model returns a text report or summary, the StrOutputParser helps in parsing and processing the text output. For example, you might ask the model to write a detailed report on a topic and then summarize it into a few key points.
 
-### 4. **Structured Output Parsing**
+### 4. **Structured Output Parsing (`structuredoutputparser.py`)**
 
 When you need structured data with specific fields, the StructuredOutputParser extracts that data from the model's output and maps it to variables. For example, you could extract facts or structured information (e.g., fact_1, fact_2) from a general description provided by the model.
+
+### 5. **No Output Parsing (`wo_outputparser.py`)**
+
+In this script, no output parser is used, and the output flows through multiple steps (generation of detailed report followed by a summary). It's useful when you need to process multiple steps of text generation and aggregation without specific structured output parsing.
 
 ---
 
